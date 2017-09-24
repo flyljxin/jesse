@@ -38,7 +38,7 @@ public class TestSpring {
 			xx.error("before mapper");
 			mapper.save(user);
 			xx.error("mapper");
-			// do work
+			// do work 修改文件
 		} catch (Exception e) {
 			xx.error(e);
 		} finally {
