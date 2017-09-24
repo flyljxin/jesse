@@ -6,7 +6,7 @@ public class TestProperty {
 	private String username;
 	
 	public void getProperty(){
-		System.out.println("---driverClassName="+driverClassName);
+		System.out.println("---seed project driverClassName="+driverClassName);
 	}
 
 	public String getDriverClassName() {
