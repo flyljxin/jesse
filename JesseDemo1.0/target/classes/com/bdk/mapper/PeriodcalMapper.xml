@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bdk.dao.IPeriodcalDao" >
+    <insert id="insertPeriodcal" parameterType="com.bdk.mapper.Periodcal" useGeneratedKeys="true" keyProperty="id">  
+        insert into periodcal(qknum, qkname, isnew, createtime, isrelease) values(#{qknum},#{qkname},#{isnew},now(),'N')  
+    </insert> 
+    
+    <update id="updatePeriodcal" parameterType="com.bdk.mapper.Periodcal">  
+        update periodcal set  qknum=#{qknum}, qkname=#{qkname}, isnew = #{isnew}, createtime=now() where id=#{id}
+    </update>
+     
+    <update id="releasePeriodcal" parameterType="int">  
+        update periodcal set isrelease='Y', releasetime=now() where id=#{id}
+    </update>
+    
+    <update id="cancelreleasePeriodcal" parameterType="int">  
+        update periodcal set isrelease='N', releasetime='0000-00-00' where id=#{id}
+    </update>
+    
+    <select id="findById" parameterType="int" resultType="com.bdk.mapper.Periodcal">    
+        select id, qknum, qkname, isnew, releasetime from periodcal where id=#{id}
+    </select>
+     
+    <select id="findAll" resultType="com.bdk.mapper.Periodcal">    
+        select * from periodcal order by isnew,qknum desc
+    </select>
+    
+   	<select id="findList" resultType="com.bdk.mapper.Periodcal">    
+        select * from periodcal order by isnew,qknum desc limit 5;
+    </select>
+    
+    <select id="findByQknum" parameterType="int" resultType="com.bdk.mapper.Periodcal">    
+        select id, qknum, qkname, isnew, releasetime from periodcal where qknum=#{qknum}
+    </select>
+      
+    <update id="setPeriodcalLatest" parameterType="int">
+    	update periodcal set isnew = 'N'  where id != #{id}
+    </update>
+    
+    <select id="queryPeriodcalList"  resultType="com.bdk.mapper.Periodcal">
+    	select * from (select id, qknum, qkname, isnew, releasetime, isrelease from periodcal 
+    	<where> 
+	    	<if test="periodcalName != null and periodcalName!=''">
+	    		 qkname like CONCAT('%',#{periodcalName},'%' )
+	    	</if> 
+	    	<if test="qkNo != 0 and qkNo != null">
+	    	     and qknum  like CONCAT('%',#{qkNo},'%' )
+	    	</if>
+    	</where>)  as a order by isnew, qknum desc limit #{pageStart} , #{pageSize}
+    </select>
+    
+    <select id="queryTotal" resultType="int" >
+       	select count(1) from periodcal
+    	<where> 
+	    	<if test="periodcalName!=null and periodcalName!=''">
+	    		 qkname like CONCAT('%',#{periodcalName},'%' )
+	    	</if> 
+	    	<if test="qknum != null and qknum != ''">
+	    	    and qknum like CONCAT('%',#{qknum},'%' )
+	    	</if>
+    	</where>
+    </select>
+    
+    <select id="findMore" resultType="com.bdk.mapper.Periodcal">
+    	select * from (select p.id, p.qknum, p.qkname, p.isnew, p.releasetime , 
+    	(select title from article a where a.qkid = p.id and a.type = 100 order by a.writetime desc limit 1) as actitle from periodcal p where isrelease = 'Y' order by isnew,qknum desc) as a limit #{pageStart} , #{pageSize} 
+    </select>
+    
+    <select id="findMoreTotal" resultType="int">    
+        select count(1) from periodcal where isrelease = 'Y' 
+    </select>
+    
+    <select id="getLatestPeriodcal" resultType="com.bdk.mapper.Periodcal">
+    	 select * from (select id, qknum, qkname, releasetime, isrelease, isnew from periodcal where isrelease = 'Y' order by isnew,releasetime desc) as a limit 1 
+    </select>
+</mapper>

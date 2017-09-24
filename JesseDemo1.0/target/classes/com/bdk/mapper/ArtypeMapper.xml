@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bdk.dao.IArtypeDao" >
+    <update id="updateType" parameterType="com.bdk.mapper.Artype">    
+        update artype set type =#{type} where code=#{code}
+    </update> 
+    <select id="getType" parameterType="int" resultType="com.bdk.mapper.Artype">    
+         select code, type from artype where code = #{code}
+    </select> 
+    <select id="getAllType" resultType="com.bdk.mapper.Artype">    
+        select code, type from artype
+    </select> 
+    
+</mapper>

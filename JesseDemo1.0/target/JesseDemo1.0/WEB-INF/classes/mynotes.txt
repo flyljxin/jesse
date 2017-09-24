@@ -1,0 +1,30 @@
+
+---MYSQL---------
+        <property name="url" value="jdbc:mysql://localhost:3306/mybatis" />  
+        <property name="username" value="mybatis" />  
+        <property name="password" value="123abc" />  
+       
+       CREATE TABLE   t_user
+(
+user_id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+user_name VARCHAR(15) NOT NULL,
+    user_age INT 
+)AUTO_INCREMENT = 100;
+ 
+CREATE USER 'mybatis'@'localhost' IDENTIFIED VIA mysql_native_password USING '***';GRANT ALL PRIVILEGES ON *.* TO 'mybatis'@'localhost' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+
+CREATE TABLE `mybatis`.`USER` ( `id` INT NOT NULL , `age` INT NOT NULL , `userName` VARCHAR(100) NOT NULL ) ENGINE = InnoDB;
+
+CREATE USER 'mybatis'@'%' IDENTIFIED VIA mysql_native_password USING '***';GRANT ALL PRIVILEGES ON *.* TO 'mybatis'@'%' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+---redis---------
+下载地址：https://github.com/dmajkic/Redis/downloads
+64bit，
+打开一个cmd窗口  使用cd命令切换目录到E:\TRS\redis 运行 redis-server.exe redis.conf 
+
+$ ./redis-cli.exe -h 192.168.0.101 -p 6379
+-----------------
+sublime Text
+block edit
+Ctrl+A - select all.
+Ctrl+Shift+L - split selection into lines.
+Then move all cursors with left/right, select with Shift+left/right. Move all cursors to start of line with Home.

@@ -1,0 +1,108 @@
+
+
+run
+
+http://localhost:8080/JesseDemo1.0/user/login.do
+-------------------
+eclipse中使用tomcat 启动web项目的流程是:
+ java build path编译项目源代码生成的class文件放到buildpath的设置路径中，根据web deployment assembly将项目中的各个资源发布到设置的指定文件中
+-------------------
+
+error:
+can not find 
+
+solution:
+复制 apache-tomcat-7.0.78\webapps\examples\WEB-INF\lib
+下的taglibs-standard-impl-1.2.5.jar 和  taglibs-standard-spec-1.2.5.jar
+到Tomcat项目lib里
+
+-------------------
+error:
+org.apache.jasper.JasperException: The absolute uri: http://java.sun.com/jsp/jstl/core cannot be
+
+solution:
+最简单的办法是把jstl.jar standard.jar复制到tomcat的web-inf/lib中（在tomcat6 webapps/examples/WEB-INF/lib 中也有这两个jar包。
+--------------------
+
+error:
+严重: Error configuring application listener of class org.springframework.web.util.IntrospectorCleanupListener
+java.lang.ClassNotFoundException: org.springframework.web.util.IntrospectorCleanupListener
+
+solution:
+vip 原因是lib包没有发布到tomcat
+project ---》 propert ---》 web deployment assembly
+Source文件夹为src/main/webapp，deploy path为 /
+
+还必须将maven库映射到WEB-INF/lib下，具体操作如下，点击add按钮
+选择java build path entries，点击next
+选择Maven Dependencies，点击finish
+
+如果不把Maven Dependencies映射到WEB-INF/lib，则在服务端如servlet中用到maven中的库时，则会提示找不到类（虽然你在编写代码时没有红xx，但是运行程序时却会找不到类）
+-------------------
+error:
+在 eclipse 中开发 Maven web 项目时出现 @Override must override a superclass method 
+
+solution:
+1,将 window->preferences->java-compiler中的Compiler compliance level 修改为 高版本
+	项目右键->build path->configure build path->java Compiler(左边那排中) ->在右边的Compiler compliance level 修改版本为1.8
+2,使用 maven-compiler-plugin 插件，指定相应的版本
+
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.2</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+    </plugins>
+    
+------------------
+error:
+\target\classes\META-INF\MANIFEST.MF (系统找不到指定的路径)问题
+
+solution:
+原因是Maven刷新没有完成。找到eclipse的project菜单选择clean...选项
+------------------
+
+error:
+ java.lang.NoClassDefFoundError: org/slf4j/Logger
+ 
+solution:
+ 只要把这三个包放在tomcat下面的lib里面就好了，
+ log4j-1.2.17.jar
+slf4j-api-1.7.25.jar
+slf4j-log4j12-1.7.25.jar
+
+
+---MYSQL---------
+        <property name="url" value="jdbc:mysql://localhost:3306/mybatis" />  
+        <property name="username" value="mybatis" />  
+        <property name="password" value="123abc" />  
+       
+       CREATE TABLE   t_user
+(
+user_id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+user_name VARCHAR(15) NOT NULL,
+    user_age INT 
+)AUTO_INCREMENT = 100;
+ 
+CREATE USER 'mybatis'@'localhost' IDENTIFIED VIA mysql_native_password USING '***';GRANT ALL PRIVILEGES ON *.* TO 'mybatis'@'localhost' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+
+CREATE TABLE `mybatis`.`USER` ( `id` INT NOT NULL , `age` INT NOT NULL , `userName` VARCHAR(100) NOT NULL ) ENGINE = InnoDB;
+
+CREATE USER 'mybatis'@'%' IDENTIFIED VIA mysql_native_password USING '***';GRANT ALL PRIVILEGES ON *.* TO 'mybatis'@'%' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+---redis---------
+下载地址：https://github.com/dmajkic/Redis/downloads
+64bit，
+打开一个cmd窗口  使用cd命令切换目录到E:\TRS\redis 运行 redis-server.exe redis.conf 
+
+$ ./redis-cli.exe -h 192.168.0.101 -p 6379
+-----------------
+sublime Text
+block edit
+Ctrl+A - select all.
+Ctrl+Shift+L - split selection into lines.
+Then move all cursors with left/right, select with Shift+left/right. Move all cursors to start of line with Home.

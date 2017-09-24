@@ -1,0 +1,94 @@
+@charset "utf-8";
+.wrap-main{
+	width: 340px;
+}
+#qk-index-dialog .inner{
+	padding: 10px;
+}
+.params-index img{
+	width: 100%;
+}
+.params-index .img-container{
+      width: 308px;
+    height: 367px;
+    background: #483535;
+}
+.params-edit-left{
+	width: 331px;
+	/* background: red; */
+	float: left;
+}
+
+.params-edit-right{
+	width: 172px;
+	/* height:100px; */
+	/* background: black; */
+	float: left;
+}
+.params-edit-right .params-edit-bottomImg{
+	margin-top: 100px;
+}
+
+.params-edit-right .params-edit-btn{
+	 margin-top: 300px;
+}
+/*手机主机样式*/
+.content{
+	background: url(/images/h5/h5_i_bg.png) center no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    text-align: center;
+    /* display: inline-block; */
+}
+.content>.inner{
+	padding: 20px;
+}
+.content .c_img{
+	
+	
+}
+ .btn{
+    width: 128px;
+    height: 41px;
+    line-height: 43px;
+    border-radius: 88px;
+    border: 0;
+    -webkit-appearance: none;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #fff;
+}
+.c_bootom{
+	    width: 322px;
+	    margin: 0 auto;
+	    padding: 2px 0;
+}
+.c_bootom .one{
+	  background-color: #4b84e6;
+}
+.c_bootom .two{
+	   color: #4b84e6;
+    background: rgba(252, 252, 252, 0.5);
+}
+
+.params-footer{
+     text-align: center;
+     padding-bottom: 10px;
+}
+
+.params-footer img{
+	    width: 206px;
+	    height: 42px;
+	    margin-top: 12px;
+}
+.params-footer p{font-size: 13px;/* line-height: 2.3rem; *//* height: .3rem; */margin-top: 1px;/* margin-bottom: .55rem; */color: #808080;}
+
+/*分享 图片指引*/
+
+.layui-m-layercont img{
+	width: 100%
+}
+.share-btn .layui-m-layercont{
+	padding:0;
+	
+}

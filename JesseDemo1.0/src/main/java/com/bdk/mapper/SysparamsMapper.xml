@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bdk.dao.ISysparamsDao" >
+    <update id="update" parameterType="com.bdk.mapper.Sysparams">    
+        update sysparams set sydb_zcan=#{sydb_zcan}, sydb_ycan=#{sydb_ycan}, 
+        	sydb_bqwz = #{sydb_bqwz}, qywh_dban=#{qywh_dban}, qkxq_dban=#{qkxq_dban} where id=1
+    </update> 
+    <select id="findById" parameterType="int" resultType="com.bdk.mapper.Sysparams">    
+        select id, sydb_zcan, sydb_ycan, sydb_bqwz, qywh_dban, qkxq_dban from sysparams where id=1
+    </select> 
+    <select id="findAll" resultType="com.bdk.mapper.Sysparams">    
+        select id, sydb_zcan, sydb_ycan, sydb_bqwz, qywh_dban, qkxq_dban from sysparams
+    </select> 
+</mapper>

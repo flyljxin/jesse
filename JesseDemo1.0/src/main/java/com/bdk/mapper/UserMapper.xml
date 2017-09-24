@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bdk.dao.IUserDao" >
+    <insert id="save" parameterType="com.bdk.mapper.User">  
+        insert into userinfo(name,password,tell,mail,company) values(#{name},#{password},#{tell},#{mail},#{company})  
+    </insert>  
+    <update id="update" parameterType="com.bdk.mapper.User">    
+        update userinfo set name=#{name},password=#{password},tell = #{tell},mail=#{mail},company=#{company} where id=#{id}    
+    </update>   
+    <delete id="delete" parameterType="int">    
+        delete from userinfo where id=#{id}    
+    </delete>    
+     <!-- mybsits_config中配置的alias类别名,也可直接配置resultType为类路径 -->      
+    <select id="findById" parameterType="int" resultType="com.bdk.mapper.User">    
+        select id,name, password,tell,mail, company from userinfo where id=#{id}    
+    </select>    
+    <select id="findAll" resultType="com.bdk.mapper.User">    
+         select id,name, password,tell,mail,company from userinfo 
+    </select>  
+    
+    <select id="login" parameterType="java.lang.String" resultType="com.bdk.mapper.User">    
+        select id,name,password,tell,mail, company from userinfo where name=#{name} and password = #{password}    
+    </select>    
+    
+    <select id="queryUserList" resultType="com.bdk.mapper.User">    
+         select id,name, password,tell,mail,company from userinfo 
+         <if test="userName!=null and userName!=''">
+         	where name like CONCAT('%',#{userName},'%' )
+         </if>
+         limit #{pageStart} , #{pageSize}
+    </select>  
+    
+    <select id="queryUserName" resultType="int">    
+         select count(name) from userinfo 
+         <if test="userName!=null and userName!=''">
+         	where name like  #{userName}
+         </if>
+    </select> 
+    
+    <select id="queryTotal" resultType="int" >    
+         select count(1) from userinfo 
+         <if test="userName!=null and userName!=''">
+         	where name like CONCAT('%',#{userName},'%' )
+         </if>
+    </select>
+</mapper>

@@ -1,0 +1,170 @@
+@charset "utf-8";
+/*头部样式 第二次样式编写*/
+ .qk-header-articse{
+	 position: fixed;
+	 top: 0;
+	 left: 50%;
+	 width: 100%;
+	 z-index: 10;
+	 height: 1.2rem;
+	 /* background: #0074d9; */
+	 max-width: 750px;
+	 /* margin: -50%; */
+	 transform: translate(-50%);
+} 
+
+	/* html, body{height: 100%;font-family: "微软雅黑"; font-size: .14rem;}
+		*{margin: 0;padding: 0;box-sizing: border-box;}
+		a {color: #428bca;text-decoration: none;}
+		a:hover,a:focus {color: #2a6496;text-decoration: underline;}
+		a:focus {outline: thin dotted;outline: 5px auto -webkit-focus-ring-color;outline-offset: -2px;} */
+		
+		.padd_40{padding-top: 2.9rem;background: #F5F5F5;}
+		.a{text-align:center;line-height: .4premposition: fixed;top: 0;left: 0;width: 100%;z-index: 10;border-bottom: 0.01rem #ccc solid; background: #f50;color: #fff;}
+		.tab{display: flex;line-height: .4rem;position: fixed;top: 1.2rem;width: 100%;z-index: 10;border-bottom: .01rem #ccc solid;}
+		.tab a{width: 33.333333%;background: #fff;text-align: center;}
+		.tab .active{border-bottom:.03rem #4b84e6 solid;}
+		.panel{margin: 0;}
+		
+		.refreshtip {position: absolute;left: 0;width: 100%;margin: .3rem 0;text-align: center;color: #999;}
+		.swiper-container{overflow: visible;}
+		.loadtip {    /* display: block; */
+    width: 100%;
+    /* line-height: .4rem; */
+    /* height: .4rem; */
+    text-align: center;
+    color: #999;
+    /* border-top: .01rem solid #ddd; */}
+		.swiper-container, .w{height: calc(100vh - 4.8rem);width: 100% !important;}/*设置div元素的高度为当前窗口高度-100px*/
+		.swiper-slide{height: auto;}
+		
+		.text-center{text-align: center;}
+		.list-group{padding-left: 0;margin-bottom: .2rem;}
+		.list-group-item{    position: relative; display: block;padding: .1rem .15rem;margin-bottom: -.01rem;background-color: #fff;border-top: .01rem solid #ddd;}
+		.list-group-item:first-child {border-top-left-radius: .04rem;border-top-right-radius: .04rem;}
+		.swiper-container-horizontal{width: 100%;overflow: hidden;}
+
+.refreshtip img{
+	width: .3rem;
+	height: .3rem;
+	
+}
+/* 第二部分 */
+.qk_box_one .qk_fl{
+	margin: 0 auto;
+	max-width: 750px;
+}
+.two>.inner{
+	padding: .2rem;
+}
+
+/*内容列表*/
+.qk-con-title .qk-left{
+	    width: 5.3rem;
+    display: inline-block;
+}
+.qk-con-title .qk-right{
+	   width: 1.74rem;
+    height: 1.2rem;
+    display: inline-block;
+}
+.qk-con-title .qk-right img{
+	width: 1.74rem;
+	height: 1.2rem;
+}
+
+
+.qk_fl {
+	    position: fixed;
+	    top: 1.2rem;
+	    width: 100%;
+	    z-index: 10;
+	    background: white;
+	    border-bottom: 1px #ccc solid;
+	    height: 1.7rem;
+}
+.qk_fl>.inner{
+      padding: 0 .2rem;
+}
+.qk_fl ul li{
+    float: left;
+    width: 1.3rem;
+    height: 1.5rem;
+    margin: 0 0.22rem;
+    position: relative;
+}
+.qk_fl .qk_con{
+	width: 7rem;
+    margin: 0 auto;
+}
+.qk_fl .qk_con .inner{
+      padding: .2rem 0rem;
+}
+.qk_fl ul li span{
+    position: absolute;
+    top: .8rem;
+    left: .35rem;
+    font-size: .22rem;
+    color: white;
+}
+.qk_fl ul{
+
+}
+.qk_fl ul li div{
+	 width: 1.3rem;
+    height: 1.3rem;
+}
+.qk_fl ul li:nth-child(1) .qk-type-bg{
+	
+	      background: url(../../images/h5/qk_1.png) center no-repeat;
+	      background-size:100% 100%;
+}
+.qk_fl ul li:nth-child(2) .qk-type-bg{
+	       background: url(../../images/h5/qk_2.png) center no-repeat;
+	       background-size:100% 100%;
+}
+.qk_fl ul li:nth-child(3) .qk-type-bg{
+	       background: url(../../images/h5/qk_3.png) center no-repeat;
+	       background-size:100% 100%;
+}
+.qk_fl ul li:nth-child(4) .qk-type-bg{
+	      background: url(../../images/h5/qk_4.png) center no-repeat;
+	       background-size:100% 100%;
+}
+.qk_con table {
+	    width: 100%;
+    margin-top: .4rem;
+}
+.qk_con table tr{
+	    height: 1.2rem;
+    border-top: .01rem solid #dbdbdb;
+}
+.qk_con table tr td{
+	    height: 1.2rem;
+   padding: .3rem .1rem .3rem 0;
+    color: #333333;
+}
+.qk_con table tr td p{
+     font-size: .3rem;
+     height: 1.3rem;
+}
+.qk_con table tr td:nth-child(1){
+	    width: 5.2rem;
+}
+.qk_con table tr td:nth-child(2){
+	    width: 1.8rem;
+}
+
+.qk_con table tr td:nth-child(2) div img{
+	width: 100%;
+}
+
+/*底部*/
+
+.xk_qktype{
+  	 position: fixed;
+  	 bottom: 0;
+  	 z-index: 100; 
+}
+
+

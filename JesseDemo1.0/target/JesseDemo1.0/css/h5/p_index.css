@@ -1,0 +1,72 @@
+@charset "utf-8";
+/*手机主机样式*/
+#content{
+	background: url(../../images/h5/h5_i_bg.png) center no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    text-align: center;
+    /* display: inline-block; */
+}
+#content>.inner{
+	padding: .2rem;
+}
+#content .c_img{
+	width: 100%;
+   
+}
+ .btn{
+    width: 2.8rem;
+     height: .78rem;
+    line-height: .78rem;
+    border-radius: .88rem;
+    border: 0;
+    -webkit-appearance: none;
+    margin: auto;
+   font-size: .28rem;
+    color: #fff;
+}
+.c_bootom{
+	    width: 5.9rem;
+    margin: 0 auto;
+	padding: .2rem 0;
+}
+.c_bootom .one{
+	  background-color: #4b84e6;
+}
+.c_bootom .two{
+	   color: #4b84e6;
+    background: rgba(252, 252, 252, 0.5);
+}
+
+#footer{
+	
+}
+/* #footer{
+	text-align: center;
+	 position: fixed;
+		bottom: 0;
+		z-index: 100;
+		width: 100%;
+		max-width: 750px;
+		min-width: 320px;
+		    height: 2.3rem;
+} */
+#footer{
+     text-align: center;
+}
+#footer img{
+	    width: 3.86rem;
+	    height: .78rem;
+	    margin-top: .5rem;
+}
+#footer p{font-size: .22rem;/* line-height: 2.3rem; *//* height: .3rem; */margin-top: .3rem;/* margin-bottom: .55rem; */color: #808080;}
+
+/*分享 图片指引*/
+
+.layui-m-layercont img{
+	width: 100%
+}
+.share-btn .layui-m-layercont{
+	padding:0;
+	
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bdk.dao.IArticleDao" >
+     <insert id="insertArticle" parameterType="com.bdk.mapper.Article">  
+        insert into article(qkid, title, wzimage, wzinfo, type, writetime) values(#{qkid},#{title},#{wzimage},#{wzinfo},#{type},#{writetime})  
+    </insert> 
+    <update id="updateArticle" parameterType="com.bdk.mapper.Article">    
+        update article set qkid=#{qkid}, title=#{title}, wzimage=#{wzimage}, wzinfo=#{wzinfo}, type=#{type}, writetime=#{writetime} 
+        where id=#{id}
+    </update> 
+    <select id="findId" parameterType="int" resultType="com.bdk.mapper.Article">    
+         select a.id, a.qkid, a.title, a.wzimage, a.wzinfo,  a.writetime, p.qknum, p.qkname, p.releasetime,p.isnew,p.isrelease,ar.code as type , ar.type as typename  from article a
+          left join periodcal p on  a.qkid = p.id  left join artype ar on a.type = ar.code 
+          where a.id = #{id}
+    </select> 
+    <select id="findAll" resultType="com.bdk.mapper.Article">    
+        select id, qkid, title, wzimage, wzinfo, type, writetime from article
+    </select>
+    <delete id="delById" parameterType="int">
+		delete from article where id = #{id}     	
+    </delete> 
+    <select id="queryArticleList"  resultType="com.bdk.mapper.Article">
+    	select a.id, a.qkid, a.title, a.wzimage, a.wzinfo, a.type, a.writetime, p.qknum, p.qkname, p.isnew, p.isrelease, ar.type as typename  from article a 
+		left join periodcal p on  a.qkid = p.id  left join artype ar on a.type = ar.code where 1=1 
+        <if test="article.qknum!=null and article.qknum!=''">
+    		and p.qknum  like CONCAT('%',#{article.qknum},'%')
+    	</if>
+    	<if test="article.title!=null and article.title!=''">
+    		and a.title like CONCAT('%',#{article.title},'%')
+    	</if>
+    	<if test="article.type!=null and article.type!='' and article.type!=0">
+    		and a.type = #{article.type}
+    	</if>
+    	 order by p.isnew,p.qknum DESC,a.writetime DESC
+		 limit #{pageStart} , #{pageSize}   	
+    </select>
+    <select id="queryArticleListH5"  resultType="com.bdk.mapper.Article">
+    	select a.id, a.qkid, a.title, a.wzimage, a.wzinfo, a.type, a.writetime, p.qknum, p.qkname,p.isrelease, ar.type as typename  from article a 
+		left join periodcal p on  a.qkid = p.id  left join artype ar on a.type = ar.code where p.isrelease='Y' 
+        <if test="article.qknum!=null and article.qknum!='' ">
+    		and p.qknum  = #{article.qknum}
+    	</if>
+    	<if test="article.type!=null and article.type!='' and article.type!=0">
+    		and a.type = #{article.type}
+    	</if>
+    	 order by p.isrelease DESC,p.qknum DESC
+		 limit #{pageStart} , #{pageSize}   	
+    </select>
+    <select id="queryTotal" resultType="int">
+       	select count(1) from article a 
+		left join periodcal p on  a.qkid = p.id  left join artype ar on a.type = ar.code where 1=1
+        <if test="article.qknum!=null and article.qknum!=''">
+    		and p.qknum like CONCAT('%',#{article.qknum},'%')
+    	</if>
+    	<if test="article.title!=null and article.title!=''">
+    		and a.title like CONCAT('%',#{article.title},'%')
+    	</if>
+    	<if test="article.type!=null and article.type!='' and article.type!=0">
+    		and a.type = #{article.type}
+    	</if>
+    </select>
+</mapper>

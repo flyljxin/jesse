@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+/*swiper部分样式*/
+.swiper-container{
+  height: calc(100vh - 2.2rem);/*当前窗口高度*/
+}
+.text-center{text-align: center;}
+/*头部*/
+.qk_header{
+	position: fixed;
+	top: 0;
+	left: 50%;
+	width: 100%;
+	z-index: 10;
+	height: 1.2rem;
+	transform: translate(-50%);
+	max-width: 750px;
+}
+.qk_body{
+	padding-top: 1.2rem;
+}
+.swiper-slide{height: auto;}
+.swiper-container{overflow: visible;}
+
+.swiper-slide{height: auto;}
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: .1rem .15rem;
+    margin-bottom: -.01rem;
+    background-color: #fff;
+    border: .01rem solid #ddd;
+}
+.loadtip {
+    /* display: block; */
+    width: 100%;
+    /* line-height: .4rem; */
+    /* height: .4rem; */
+    text-align: center;
+    color: #999;
+    /* border-top: .01rem solid #ddd; */
+}
+.refreshtip {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin: .1rem 0;
+    text-align: center;
+    color: #999;
+}
+
+/*底部*/
+.dire-footer{
+	    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    width: 100%;
+    max-width: 750px;
+    min-width: 320px;
+    background: white;
+    height: .6rem;
+}
+
+.dire-footer p{
+	    text-align: center;
+    /* line-height: 1.35rem; */
+    /* height: 1.35rem; */
+    font-size: .22rem;
+    color: #999999;
+    line-height: .6rem;
+    height: .6rem;
+}
+
+
+
+
+
+/* 第二部分 */
+.qk_two>.inner{
+	padding: .2rem;
+}
+.qk_sub_table{
+	width: 100%;
+ }
+ .qk_sub_table .c_box{
+      background: url(../../images/h5/sub_t_bg.png) center no-repeat;
+      background-size: 100% 100%;
+      width: 1.9rem;
+      height: 1.9rem;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+ }
+ 
+  .qk_sub_table tr{
+       border-bottom: 1px solid #d0d0d0;
+        height: 2.4rem;
+        background: #fff;
+ }
+ .qk_sub_table .qk_title{
+     font-size: .36rem;
+     color: white;
+     text-shadow: 0rem 0.04rem 0.07rem dimgrey;
+ } 
+ .qk_sub_table tr .one_td{
+    width: 1.9rem;
+    height: 1.9rem;
+    padding-left: .1rem;
+ }
+  .qk_sub_table tr .two_td{
+    width: 5rem;
+    padding: 0 .3rem;
+ }
+  .qk_sub_table tr .two_td h1{
+    font-size: .36rem;  
+    color: #333333;
+ }
+ .qk_sub_table tr .two_td h2{
+     margin-top: .2rem;
+    font-size: .26rem; 
+    color: #666666; 
+ }
+ 
+  .qk_sub_table tr .two_td p{
+      margin-top: .2rem;
+    font-size: .2rem;  
+    color: #b8b8b8;
+ }
+ .two_td .qk_icon{
+    background: url(../../images/h5/sub_icon.png) 0 0rem no-repeat;
+    background-size: 100% 100%;
+    width: .29rem;
+    height: .26rem;
+    padding-left: .45rem;
+ }
+  .two_td .qk_text{
+       margin-left: .1rem;
+  }

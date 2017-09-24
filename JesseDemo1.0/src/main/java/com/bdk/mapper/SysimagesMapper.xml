@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bdk.dao.ISysimagesDao" >
+    <update id="update" parameterType="com.bdk.mapper.Sysimages">  
+        update sysimages 
+        <set>
+        	<if test="fmtp_info != null">
+				fmtp_info = #{fmtp_info},
+			</if>
+			<if test="sys_logo != null">
+				sys_logo = #{sys_logo},
+			</if>
+			<if test="sydb_logo != null">
+				sydb_logo = #{sydb_logo},
+			</if>
+			<if test="tc_twocode != null">
+				tc_twocode = #{tc_twocode},
+			</if>
+			<if test="qywh_info != null">
+				qywh_info = #{qywh_info}
+			</if>
+        </set>
+        where id=#{id}
+    </update> 
+    <select id="findById" parameterType="int" resultType="com.bdk.mapper.Sysimages">    
+        select id, fmtp_info, sys_logo, sydb_logo, tc_twocode, qywh_info from sysimages where id=1
+    </select> 
+    <select id="findAll" resultType="com.bdk.mapper.Sysimages">    
+        select id, fmtp_info, sys_logo, sydb_logo, tc_twocode, qywh_info from sysimages
+    </select> 
+</mapper>
+
