@@ -21,7 +21,29 @@ public class User  extends PageEntity implements Serializable{
 	private String tell;
 	private String mail;
 	private BDK_USER company;
+	private String userType;
+	private String roleId;
+	private String mark;
 
+	
+	public String getUserType() {
+		return userType;
+	}
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
+	public String getRoleId() {
+		return roleId;
+	}
+	public void setRoleId(String roleId) {
+		this.roleId = roleId;
+	}
+	public String getMark() {
+		return mark;
+	}
+	public void setMark(String mark) {
+		this.mark = mark;
+	}
 	public int getId() {
 		return id;
 	}

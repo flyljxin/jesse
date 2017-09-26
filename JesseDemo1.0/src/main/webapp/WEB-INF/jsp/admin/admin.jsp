@@ -151,8 +151,9 @@
         ,$=layui.jquery;
         /* 菜单目录 */
         cms.addNav([
-           /*  {id: 1, pid: 0, node: '系统主页', url: '${pageContext.request.contextPath}/user/sysindex.do'}, */
-             {id: 2, pid: 0, node: '用户管理', url: '${pageContext.request.contextPath}/user/muser.do'},
+             {id: 1, pid: 0, node: '系统主页', url: '${pageContext.request.contextPath}/user/sysindex.do'}, 
+             {id: 2, pid: 0, node: '用户管理12', url: '${pageContext.request.contextPath}/user/muser.do'},
+             {id: 1, pid: 2, node: '用户管理34', url: '${pageContext.request.contextPath}/user/muser.do'},
             {id: 3, pid: 0, node: '期刊管理', url: '${pageContext.request.contextPath}/peradmin/periods.do'},
             {id: 4, pid: 0, node: '期刊内容管理', url: '${pageContext.request.contextPath}/article/artices.do'},
             {id: 5, pid: 0, node: '参数管理', url: '${pageContext.request.contextPath}/sysparams/allSysparams.do'},
