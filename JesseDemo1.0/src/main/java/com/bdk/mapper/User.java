@@ -24,8 +24,14 @@ public class User  extends PageEntity implements Serializable{
 	private String userType;
 	private String roleId;
 	private String mark;
-
 	
+	private String testobj;//测试类
+	public String getTestobj() {
+		return testobj;
+	}
+	public void setTestobj(String testobj) {
+		this.testobj = testobj;
+	}
 	public String getUserType() {
 		return userType;
 	}
