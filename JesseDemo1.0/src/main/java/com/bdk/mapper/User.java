@@ -25,8 +25,9 @@ public class User  extends PageEntity implements Serializable{
 	private String roleId;
 	private String mark;
 	
-	private String testobj;//测试类
+	private String testobj;//测试类12
 	public String getTestobj() {
+		////33355555---222
 		return testobj;
 	}
 	public void setTestobj(String testobj) {
