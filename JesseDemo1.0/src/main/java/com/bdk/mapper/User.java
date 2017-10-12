@@ -27,7 +27,7 @@ public class User  extends PageEntity implements Serializable{
 	
 	private String testobj;//测试类12
 	public String getTestobj() {
-		////33355555---222111
+		////33355555---22211133
 		return testobj;
 	}
 	public void setTestobj(String testobj) {
