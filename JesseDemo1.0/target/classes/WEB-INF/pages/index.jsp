@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
-<script src="<%=contextPath%>/common/js/jquery-2.0.3.js" type="text/javascript" charset="utf-8"></script>
+<script src="${pageContext.request.contextPath}/common/js/jquery-2.0.3.js" type="text/javascript" charset="utf-8"></script>
     <head>
         <meta charset="UTF-8" />
     </head>

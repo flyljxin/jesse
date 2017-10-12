@@ -9,14 +9,14 @@
 				               <article class="content">
 							   <section class="inner">
 								     <div class="img-container"><!--固定图片尺寸超出部分隐藏-->
-						                 <img name="indexImg"  class="c_img " alt="" src="/upload/<%=SystemCons.getSysimgs().getFmtp_info()%>">
+						                 <img name="indexImg"  class="c_img " alt="" src="/upload/">
 						             </div> 
 									<aside class="c_bootom" >
 									    <button id="yaolingbtn" class="btn one" onclick="javascript:return false;" >
-									       <input type="text" name="title"  autocomplete="off" placeholder="请输入标题" value="<%=SystemCons.sysparams.getSydb_zcan()%>" class="layui-input">
+									       <input type="text" name="title"  autocomplete="off" placeholder="请输入标题" value="" class="layui-input">
 									     </button>
 									    <button id="hunyingbtn" class="btn two" onclick="javascript:return false;">
-									       <input type="text" name="title"  autocomplete="off" placeholder="请输入标题" value="<%=SystemCons.sysparams.getSydb_ycan()%>" class="layui-input" />
+									       <input type="text" name="title"  autocomplete="off" placeholder="请输入标题" value="" class="layui-input" />
 									    
 									    </button>
 									</aside>
@@ -24,8 +24,8 @@
 							</article>
 				      </section> 
 				      <footer class="params-footer">
-		                  <img name="bottomImg" class="c_img" alt="" src="/upload/<%=SystemCons.getSysimgs().getSydb_logo()%>">	
-		                  <p> <input type="text" name="title"  autocomplete="off" placeholder="请输入标题" value="<%=SystemCons.sysparams.getSydb_bqwz()%>" class="layui-input" /> </p>
+		                  <img name="bottomImg" class="c_img" alt="" src="/upload/">	
+		                  <p> <input type="text" name="title"  autocomplete="off" placeholder="请输入标题" value="" class="layui-input" /> </p>
 		              </footer>
 		</div> 
 		

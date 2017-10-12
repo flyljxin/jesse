@@ -1,16 +1,11 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>  
 <%@page import="com.bdk.mapper.Sysimages"%>
-<%@page import="com.dimeng.util.ObjectHelper"%>
-<%  
-String path = request.getContextPath();  
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-Sysimages sysimages = ObjectHelper.convert(request.getAttribute("sysimages"), Sysimages.class);
-%>  
+ 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">  
 <html>  
   <head>  
-    <base href="<%=basePath%>">  
+    <base href="">  
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
 	<title>图标管理</title>  
 	<meta http-equiv="pragma" content="no-cache">
@@ -32,9 +27,9 @@ Sysimages sysimages = ObjectHelper.convert(request.getAttribute("sysimages"), Sy
 				  <div class="layui-inline">
 				     <div class="layui-input-inline" >
 				        <span style="color:red; ">图片按尺寸：616x734像素(px)的1/3比例显示,如超出尺寸请重新编辑上传。</span>
-				        <input id="fmtpinfo"  type="hidden"   value="<%=sysimages.getFmtp_info()%>" >
+				        <input id="fmtpinfo"  type="hidden"   value="" >
 				        <div class="img-wrap" >
-				          <img src="${pageContext.request.contextPath}/upload/<%=sysimages.getFmtp_info()%>" width="160" height="200" />
+				          <img src="${pageContext.request.contextPath}/upload/" width="160" height="200" />
 				         </div>
 				        <input id="fmtp_info" type="file" name="file" class="layui-upload-file">
 				     </div>
@@ -43,9 +38,9 @@ Sysimages sysimages = ObjectHelper.convert(request.getAttribute("sysimages"), Sy
 				  <div class="layui-inline">
 				    <div class="layui-input-inline" >
 				       <span style="color:red; ">图片按尺寸：229x47像素(px)的1/1比例显示,如超出尺寸请重新编辑上传。</span>
-				        <input id="syslogo" type="hidden"   value="<%=sysimages.getSys_logo()%>" >
+				        <input id="syslogo" type="hidden"   value="" >
 				        <div class="img-wrap" >
-				           <img src="${pageContext.request.contextPath}/upload/<%=sysimages.getSys_logo()%>" width="160" height="60" style="background: #1e9fff;" />
+				           <img src="${pageContext.request.contextPath}/upload/" width="160" height="60" style="background: #1e9fff;" />
 				        </div>
 				        <input id="sys_logo" type="file" name="file" class="layui-upload-file">
 				    </div>
@@ -54,9 +49,9 @@ Sysimages sysimages = ObjectHelper.convert(request.getAttribute("sysimages"), Sy
 		           <div class="layui-inline">
 				    <div class="layui-input-inline" >
 				        <span style="color:red; ">图片按尺寸：386x78像素(px)的1/2比例显示,如超出尺寸请重新编辑上传。</span>
-				         <input id="sydblogo" type="hidden" "  value="<%=sysimages.getSydb_logo()%>" >
+				         <input id="sydblogo" type="hidden" "  value="" >
 				         <div class="img-wrap" >
-				        <img src="${pageContext.request.contextPath}/upload/<%=sysimages.getSydb_logo()%>" width="160" height="60" />
+				        <img src="${pageContext.request.contextPath}/upload/" width="160" height="60" />
 				        </div>
 				       <input id="sydb_logo" type="file" name="file" class="layui-upload-file">
 				    </div>
@@ -65,9 +60,9 @@ Sysimages sysimages = ObjectHelper.convert(request.getAttribute("sysimages"), Sy
 				  <div class="layui-inline">
 				    <div class="layui-input-inline" > 
 				        <span style="color:red; ">图片按尺寸：386x78像素(px)的1/3比例显示,如超出尺寸请重新编辑上传。</span>
-				         <input id="tctwocode" type="hidden"   value="<%=sysimages.getTc_twocode()%>" >
+				         <input id="tctwocode" type="hidden"   value="" >
 				         <div class="img-wrap" >
-				        <img src="${pageContext.request.contextPath}/upload/<%=sysimages.getTc_twocode()%>" width="150" height="150" />
+				        <img src="${pageContext.request.contextPath}/upload/" width="150" height="150" />
 				        </div>
 				       <input id=tc_twocode type="file" name="file" class="layui-upload-file">
 				    </div>
@@ -76,9 +71,9 @@ Sysimages sysimages = ObjectHelper.convert(request.getAttribute("sysimages"), Sy
 		           <div class="layui-inline">
 				    <div class="layui-input-inline" >
 				      <span style="color:red; ">图片按尺寸：386x78像素(px)的1/3比例显示,如超出尺寸请重新编辑上传。</span>
-				       <input id="qywhinfo" type="hidden"  value="<%=sysimages.getQywh_info()%>" >
+				       <input id="qywhinfo" type="hidden"  value="" >
 				        <div class="img-wrap" >
-				       <img src="${pageContext.request.contextPath}/upload/<%=sysimages.getQywh_info()%>" width="160" height="200" />
+				       <img src="${pageContext.request.contextPath}/upload/" width="160" height="200" />
 				       </div>
 				       <input id="qywh_info" type="file" name="file" class="layui-upload-file">
 				    </div>
